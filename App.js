@@ -1,21 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeView from './components/Home';
+import NewsBox from './components/newsBox';
+import WebPage from './components/WebView';
+import News from './components/News';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createStackNavigator();
+
+const theme = {
+  colors: {
+    dark: '#050505',
+    light: '#F5F1E3',
+    button: '#b25b00',
+    textLight: '#FFFFFF',
+    textDark: '#4E598C',
+    input: '#DDDBCB',
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Hacker News"
+          component={News}
+          options={{ 
+            title: 'Hacker News',
+          }} />
+
+        <Stack.Screen
+          name="WebView"
+          component={WebPage}
+          options={{
+            headerTintColor: theme.colors.textLight,
+            headerTitle: 'News Website',
+            headerStyle: { backgroundColor: theme.colors.dark }
+          }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
