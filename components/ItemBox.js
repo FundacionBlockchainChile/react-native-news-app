@@ -21,7 +21,6 @@ const ItemBox = (props) => {
     const scale = dragX.interpolate({
       inputRange: [0, 100],
       outputRange: [1, .5],
-      extrapolate: 'clamp',
     });
     return (
       <TouchableOpacity onPress={props.handleDelete} activeOpacity={0.6}>
@@ -38,7 +37,7 @@ const ItemBox = (props) => {
       <Swipeable renderRightActions={rightSwipe}>
         <View style={styles.container}>
           <Text numberOfLines={2} style={styles.textTitle} >{props.data.title}.</Text>
-          <Text>Author: {props.data.author} - {moment(props.data.created_at).fromNow()}</Text>
+          <Text style={{color: '#7a7a7a', fontSize: 15}}>Author: {props.data.author} - {moment(props.data.created_at).fromNow()}</Text>
         </View>
       </Swipeable>
     </TouchableOpacity>

@@ -1,7 +1,9 @@
 {
   "expo": {
-    "name": "ListaCompras",
-    "slug": "ListaCompras",
+    "name": "Hacker News App",
+    "slug": "HackerNewsApp",
+    "privacy": "public",
+    "description": "List latest Hacker News and Read it inside the App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,11 +24,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.sergiocastro.newsapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
   }
 }

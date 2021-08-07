@@ -1,13 +1,13 @@
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeView from './components/Home';
-import NewsBox from './components/newsBox';
-import WebPage from './components/WebView';
-import News from './components/News';
+import 'react-native-gesture-handler'
+import * as React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import HomeView from './components/Home'
+import NewsBox from './components/newsBox'
+import WebPage from './components/WebView'
+import News from './components/News'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 const theme = {
   colors: {
@@ -17,7 +17,7 @@ const theme = {
     textLight: '#FFFFFF',
     textDark: '#4E598C',
     input: '#DDDBCB',
-  }
+  },
 }
 
 const App = () => {
@@ -25,23 +25,26 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Hacker News"
+          name="News"
           component={News}
-          options={{ 
+          options={{
+            headerTintColor: theme.colors.textLight,
             title: 'Hacker News',
-          }} />
+            headerStyle: { backgroundColor: theme.colors.dark },
+          }}
+        />
 
         <Stack.Screen
           name="WebView"
           component={WebPage}
           options={{
             headerTintColor: theme.colors.textLight,
-            headerTitle: 'News Website',
-            headerStyle: { backgroundColor: theme.colors.dark }
-          }} />
+            headerStyle: { backgroundColor: theme.colors.dark },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default App
