@@ -16,7 +16,9 @@ Run on Local Machine with Expo:
  
 Open the App with your device:
 The App is pubished as a Public Expo Go on the following address:
-exp://exp.host/@sergiovegeta/HackerNewsApp
+
+https://expo.dev/@sergiovegeta/HackerNewsApp
+
 You need to instal Expo Go on your device and scan the QR to load it.
  
 Enjoy!
